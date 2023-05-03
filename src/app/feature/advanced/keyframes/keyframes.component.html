@@ -1,0 +1,49 @@
+<h1>Multi-step Animation using Angular Keyframes</h1>
+
+<p>Giống như keyframes animation CSS cho chúng ta build animation từng step 0% -> 50% -> 100% etc..</p>
+<p>Với animate() function được sử dụng trong các group(), stagger() hay sequence() functionfunction thì</p>
+<p>Animation angular cung cấp cho chung ta một khái niệm: </p>
+<h3 style="font-weight: bold;">offset() function => Keyframes CSS</h3>
+
+<h3>/* css */</h3>
+<img src="../../../../assets/keyframe1.png">
+<h3>/* Angular animation */</h3>
+<img src="../../../../assets/keyframe2.png">
+
+<h3>Demo</h3>
+<button (click)="cardIsDisplayed = !cardIsDisplayed">Show/Hide KeyFrames</button>
+
+<div *ngIf="cardIsDisplayed" @keyframe>
+  <app-card *ngIf="cardIsDisplayed" [title]="'KeyFrames Demo'"></app-card>
+</div>
+
+
+<div style="margin-top: 500px; height: 100px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>

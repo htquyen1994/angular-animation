@@ -1,0 +1,18 @@
+:host {
+  margin: 20px;
+  font-size: 18px;
+  .item {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .animation-img {
+    background-image: url('../../../../assets/animation.jpeg');
+    background-size: cover;
+    width: 700px;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+  }
+}

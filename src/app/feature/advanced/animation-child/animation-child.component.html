@@ -1,0 +1,23 @@
+<h1>Demo without Animation Child</h1>
+<button (click)="isOpenChildOne = !isOpenChildOne">Show/Hide Without Animation Child</button>
+<div class="box">
+  <div *ngIf="isOpenChildOne">
+    <div @fadeLeftHide >
+      <app-card title="Without animation child"></app-card>
+    </div>
+  </div>
+</div>
+<p> => Parent element destroyed =>Animation's Child element Không Hoạt đông</p>
+
+
+<h1>Demo Animation Child</h1>
+<button (click)="isOpenChildTwo = !isOpenChildTwo">Show/Hide Without Animation Child</button>
+<div class="box">
+  <div *ngIf="isOpenChildTwo" @container>
+    <div @fadeLeftHideAnimationChild>
+      <app-card title="With animation child"></app-card>
+    </div>
+  </div>
+</div>
+
+

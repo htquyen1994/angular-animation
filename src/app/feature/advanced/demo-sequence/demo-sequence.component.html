@@ -1,0 +1,33 @@
+<p>Demo sequence</p>
+
+<div class="action-container">
+  <button (click)="selectedSequence(SEQUENCE.SEQUENCE)">Sequence</button>
+  <button (click)="selectedSequence(SEQUENCE.GROUP)">Group</button>
+  <button (click)="selectedSequence(SEQUENCE.STAGGER)">Stagger</button>
+</div>
+
+<div class="content">
+  <ng-container [ngSwitch]="typeSequence">
+    <div *ngSwitchCase="SEQUENCE.SEQUENCE" @fadeSequence (@fadeSequence.done)="animationDone()">
+      <ng-container *ngTemplateOutlet="cardRef; context:{title:'SEQUENCE CARD'}"></ng-container>
+    </div>
+    <div *ngSwitchCase="SEQUENCE.GROUP" @fadeGroup (@fadeGroup.done)="animationDone()">
+      <ng-container *ngTemplateOutlet="cardRef; context:{title:'GROUP CARD'}" ></ng-container>
+    </div>
+    <div *ngSwitchCase="SEQUENCE.STAGGER" @fadeStagger (@fadeStagger.done)="animationDone()">
+      <ng-container *ngTemplateOutlet="cardListRef; context:{title:'STAGGER CARD'}"></ng-container>
+    </div>
+    <div *ngSwitchDefault></div>
+  </ng-container>
+</div>
+
+
+<ng-template #cardRef let-title="title">
+  <app-card [title]="title"></app-card>
+</ng-template>
+
+<ng-template #cardListRef let-title="title">
+  <ng-container *ngFor="let item of [0, 1, 2, 3, 4, 5]; let i = index">
+    <app-card [title]="item+''"></app-card>
+  </ng-container>
+</ng-template>

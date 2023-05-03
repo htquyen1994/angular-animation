@@ -1,0 +1,24 @@
+<h1>State Change</h1>
+
+<p>Angular cung cấp 3 khái niệm để định nghĩa state để sử dụng Animation Angular</p>
+
+<ul>
+  <li>Wildcard: Kiểu mặc định mọi state, chuyển state này đến bất kỳ state khác(Như router)</li>
+  <li>Void: Hiểu là khi khai báo state khi element đính vào DOM hoặc remove khỏi DOM</li>
+  <li>Custom: State do mình định nghĩa và chỉ định</li>
+</ul>
+
+<div class="container">
+  <div>Wildcard State</div>
+  <button (click)="isZoom = !isZoom">Zoom In/Out</button>
+  <div [@zoomInOut]="isZoom? 'zoomIn': 'zoomOut'" class="box wildcard"></div>
+</div>
+
+
+<div class="container">
+  <div>Void State</div>
+  <button (click)="isShow = !isShow">Show/Hide Box</button>
+  <div *ngIf="isShow" @showHide class="box void"></div>
+</div>
+
+

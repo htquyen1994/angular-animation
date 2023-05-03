@@ -1,0 +1,32 @@
+<h1>Target Multiple Elements (Query)</h1>
+
+<p>Như qua các ví dụ, chúng ta đã sử dụng các query sau để apply animation cho các phần tử</p>
+<ul>
+  <li>query(":enter") or query(":leave") : Query for newly inserted/removed elements</li>
+  <li>query("@triggerName") : Query elements that contain an animation trigger.</li>
+  <li>query("@*") : Query all elements that contain an animation triggers</li>
+  <li>query(":self") : Include the current element into the animation sequence</li>
+</ul>
+
+<h3>Limiting the Number of Elements Queried</h3>
+
+<div class="action-container">
+  <button (click)="selectedSequence(SEQUENCE.STAGGER)">Stagger</button>
+</div>
+
+
+<div class="content">
+  <ng-container [ngSwitch]="typeSequence">
+
+    <div *ngSwitchCase="SEQUENCE.STAGGER" @fadeStagger (@fadeStagger.done)="animationDone()">
+      <ng-container *ngTemplateOutlet="cardListRef; context:{title:'LIMIT CARD'}"></ng-container>
+    </div>
+    <div *ngSwitchDefault></div>
+  </ng-container>
+</div>
+
+<ng-template #cardListRef let-title="title">
+  <ng-container *ngFor="let item of [0, 1, 2, 3]; let i = index">
+    <app-card [title]="item+''"></app-card>
+  </ng-container>
+</ng-template>

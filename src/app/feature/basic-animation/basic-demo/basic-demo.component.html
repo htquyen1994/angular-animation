@@ -1,0 +1,4 @@
+<button (click)="isOpen = !isOpen">Show/Hide Box</button>
+<div class="box" [@openClosed]="isOpen ? 'open': 'close'">
+  Hello worl
+</div>
