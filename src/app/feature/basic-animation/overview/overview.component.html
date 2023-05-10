@@ -1,24 +1,30 @@
 <h1>Overview</h1>
 
-<div class="item">Khái niệm</div>
-<p>Animation provides the illusion of motion,
-  Animations can improve your application and user experience in a number of ways:</p>
+<h1 class="item">1. Khái niệm</h1>
+<p>Animation được hiểu là hiệu ứng chuyển động, sử dụng để tạo hiệu ứng di chuyển cho các phần tử, giúp trải nghiệm người dùng được tốt hơn
+  và được ứng dụng phổ biến trong các website hiện nay:</p>
 <ul>
-  <li>Without animations, web page transitions can seem abrupt and jarring</li>
-  <li>Motion greatly enhances the user experience, so animations give users a chance to detect the application's response to their actions</li>
-  <li>Good animations intuitively call the user's attention to where it is needed</li>
+  <li>Nếu không có animation, Các phần tử trong trang web của bạn chuyển động một cách đột ngột và kh</li>
+  <li>Nâng cao trải nghiệm người dùng</li>
+  <li>Thu hút sự chú ý người dùng một cách trực quan đến nơi cần thiết</li>
 </ul>
-
-<div class="item">Làm sao sử dụng Animation Angular</div>
+<p style="color: red;">Vậy nhược điểm của nó mang lại là gì? Chính là performance của website bạn, tăng đáng kể.
+  Nếu website bạn lớn và dùng nhiều animation thì performance sẽ là vấn đề của ban...
+</p>
+<div class="item">2. Animation Angular</div>
 <ul>
-  <li>Evaluate data binding expression: Trạng thái nào thì animation sẽ được áp dụng cho element hay host</li>
-  <li>Target element, Host -> Nói cho angular biết phần tử nào được áp dụng</li>
-  <li>State: Nói cho angular biết là kiểu style CSS animation sẽ được áp dụng</li>
-  <li>Transition: Nói cho Angular biết quá trình chuyển đổi State sẽ như thế nào</li>
+  <li>Là một module trong angular (@angular/animations) Được xây dựng trên những tín năng của CSS</li>
+  <li>Lifecycle of Angular Animation: After ngOnInit, Before ngOnDestroy</li>
+  <li>Để sử dụng Angular Animation chúng ta cần import: BrowserAnimationsModule</li>
+  <li>Tương tự để tắt (disabled global) Angular Animation chúng ta import: NoopAnimationsModule</li>
 </ul>
+<img class="animation-img" >
+<p style="margin-left: 100px; font-style: italic;">Evaluate data binding expression, Data binding target, State, Transition</p>
 
+
+
+<div class="item"> Một số function sẽ gặp khi làm việc về Animation Angular</div>
 <ul>
-  Một số khai function sẽ gặp khi làm việc về Animation Angular:
   <li>trigger()</li>
   <li>style()</li>
   <li>state()</li>
@@ -28,18 +34,20 @@
   <li>group()</li>
 </ul>
 
-<img class="animation-img" >
 
 
 
 
-<div class="item">**Note***</div>
 
+<div class="item">3. Angular animation so với CSS animation</div>
 <ul>
-  <li>Code style CSS: Camel Style or Dash Style</li>
-  <li>Lifecycle of Angular: After ngOnInit, Before ngOnDestroy</li>
-  <li>https://stackoverflow.com/questions/49628726/what-is-the-purpose-of-angular-animations</li>
+  <li>Tạo animation nhanh hơn, dễ quản lý hơn so...(chạy nhanh hơn pure CSS animation?)</li>
+  <li>Support state trang thái :enter :leave cho DOM added hoặc removed</li>
+  <li>Automatic property calculation '*'</li>
+  <li>Animation callbacks: animation.start() và animation.done()</li>
+  <li>Tái sử dụng (Truyền parameter)</li>
 </ul>
+
 
 <div class="item">Demo</div>
 <app-basic-demo></app-basic-demo>
